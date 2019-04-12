@@ -4,7 +4,7 @@ export default class EmployeeList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="content">
                 <h2>Our Employees</h2>
                 {
                     this.props.employees.map(employee => 
