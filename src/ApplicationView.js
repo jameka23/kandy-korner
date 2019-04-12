@@ -5,44 +5,31 @@ import EmployeeList from './components/employee/employeeList'
 import CandyList from './components/candy/candyList'
 
 export default class ApplicationView extends Component {
-        
-    //Store locations array
-    storeLocationsArray = [
-        { id:1, address: "123 Lean On Me Drive, Nashville, TN" },
-        { id:2, address: "872 Rock With It, Clarksville, TN" },
-        { id:3, address: "9019 Hottie Ave,  Bristol, TN" },
-    ]
-
-    //Employees array
-    employeesArray = [
-        { id:1, name: "Jameka Echols" },
-        { id:2, name: "DeSean Webster" },
-        { id:3, name: "Delon Echols" },
-    ]
-    
-    //Candy types array
-    candyTypesArray = [
-        { id:1, name: "gummy" },
-        { id:2, name: "chocolate" },
-        { id:3, name: "lollipop" },
-    ]
-
-    //Individual Candy Array
-    candyArray = [
-        { id:1, candyTypeId:1, candy:"Gummy Bears" },
-        { id:2, candyTypeId:3, candy:"Tootsie Pops" },
-        { id:3, candyTypeId:2, candy:"Hersey's" }
-    ]
-
-
     state = {
-        stores: this.storeLocationsArray,
-        employees: this.employeesArray,
-        candyTypes: this.candyTypesArray,
-        candies: this.candyArray
+        stores: [],
+        employees: [],
+        candyTypes: [],
+        candies: []
     }
 
-    // candies = {...{...this.state.candyTypes,...this.state.candies}}
+    componentDidMount() {
+        const newState = {}
+
+        fetch("http://localhost:5002/stores")
+            .then(r => r.json())
+            .then(stores => newState.stores = stores)
+            .then(() => fetch("http://localhost:5002/employees"))
+            .then(r => r.json())
+            .then(employees => newState.employees = employees)
+            .then(() => fetch("http://localhost:5002/candyTypes"))
+            .then(r => r.json())
+            .then(candyTypes => newState.candyTypes = candyTypes)
+            .then(() => fetch("http://localhost:5002/candies"))
+            .then(r => r.json())
+            .then(candies => newState.candies = candies)
+            .then(() => this.setState(newState))
+    }
+
     // make the routes
     render(){
         return(
