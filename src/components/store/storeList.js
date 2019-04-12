@@ -4,7 +4,7 @@ export default class StoreList extends Component {
 
     render(){
         return (
-            <div>
+            <div className="content">
                 <h2>Our Store Locations</h2>
                 {
                     this.props.stores.map(store => 
