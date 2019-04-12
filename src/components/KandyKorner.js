@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import StoreList from './store/storeList'
+import EmployeeList from './employee/employeeList'
+import CandyList from './candy/candyList'
 
 export default class KandyKorner extends Component {
     
@@ -35,5 +38,16 @@ export default class KandyKorner extends Component {
         employees: this.employeesArray,
         candyTypes: this.candyTypesArray,
         candies: this.candyArray
+    }
+
+    render(){
+        return (
+            <div>
+                <h1>Kandy Korner</h1>
+                <StoreList stores = {this.state.stores}/>
+                <EmployeeList employees = {this.state.employees}/>
+                <CandyList candies = {this.state.candies}/>
+            </div>
+        )
     }
 }
