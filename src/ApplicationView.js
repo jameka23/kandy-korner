@@ -29,10 +29,11 @@ export default class ApplicationView extends Component {
 
     //Individual Candy Array
     candyArray = [
-        { id:1, candyType:1, candy:"Gummy Bears" },
-        { id:2, candyType:3, candy:"Tootsie Pops" },
-        { id:3, candyType:2, candy:"Hersey's" }
+        { id:1, candyTypeId:1, candy:"Gummy Bears" },
+        { id:2, candyTypeId:3, candy:"Tootsie Pops" },
+        { id:3, candyTypeId:2, candy:"Hersey's" }
     ]
+
 
     state = {
         stores: this.storeLocationsArray,
@@ -41,6 +42,7 @@ export default class ApplicationView extends Component {
         candies: this.candyArray
     }
 
+    // candies = {...{...this.state.candyTypes,...this.state.candies}}
     // make the routes
     render(){
         return(
@@ -52,7 +54,7 @@ export default class ApplicationView extends Component {
                     return <EmployeeList employees={this.state.employees} />
                 }} />
                 <Route path="/candies" render={(props) => {
-                    return <CandyList candies={this.state.candies} />
+                    return <CandyList candies={this.state.candies} candyTypes={this.state.candyTypes} />
                 }} />
             </React.Fragment>
         )
