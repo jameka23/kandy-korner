@@ -1,22 +1,51 @@
 {
-    "stores": [
-        { "id":1, "address": "123 Lean On Me Drive, Nashville, TN" },
-        { "id":2, "address": "872 Rock With It, Clarksville, TN" },
-        { "id":3, "address": "9019 Hottie Ave,  Bristol, TN" }
-    ],
-    "employees": [
-        { "id":1, "name": "Jameka Echols" },
-        { "id":2, "name": "DeSean Webster" },
-        { "id":3, "name": "Delon Echols" }
-    ],
-    "candyTypes": [
-        { "id":1, "name": "gummy" },
-        { "id":2, "name": "chocolate" },
-        { "id":3, "name": "lollipop" }
-    ],
-    "candies": [
-        { "id":1, "candyTypeId":1, "candy":"Gummy Bears" },
-        { "id":2, "candyTypeId":3, "candy":"Tootsie Pops" },
-        { "id":3, "candyTypeId":2, "candy":"Hersey's" }
-    ]
+  "stores": [
+    {
+      "id": 1,
+      "address": "123 Lean On Me Drive, Nashville, TN"
+    },
+    {
+      "id": 2,
+      "address": "872 Rock With It, Clarksville, TN"
+    },
+    {
+      "id": 3,
+      "address": "9019 Hottie Ave,  Bristol, TN"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jameka Echols"
+    },
+    {
+      "id": 2,
+      "name": "DeSean Webster"
+    },
+    {
+      "id": 3,
+      "name": "Delon Echols"
+    }
+  ],
+  "candyTypes": [
+    {
+      "id": 1,
+      "name": "gummy"
+    },
+    {
+      "id": 2,
+      "name": "chocolate"
+    },
+    {
+      "id": 3,
+      "name": "lollipop"
+    }
+  ],
+  "candies": [
+    {
+      "id": 3,
+      "candyTypeId": 2,
+      "candy": "Hersey's"
+    }
+  ]
 }
